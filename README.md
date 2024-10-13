@@ -1,10 +1,12 @@
 # -Exercise-5-Web-Scraping-Data
 
-Aim:
-
+```Name: THIRISHA S
+Reg No: 212222230160
+```
+## Aim:
 To automate the process of scraping structured data from a website using UiPath and saving the extracted data into a CSV file for further use.
-Equipment Required:
 
+## Equipment Required:
 UiPath Studio – Installed and ready to create automation workflows.
 Web Browser (Microsoft Edge, Google Chrome, etc.) – A browser to access the webpage from which data will be scraped. Ensure the UiPath Browser Extension is installed.
 Internet Connection – For accessing the website.
@@ -13,26 +15,26 @@ Minimum 4 GB RAM.
 Minimum 2.0 GHz CPU.
 Windows operating system.
 CSV File Location – Path to save the resulting CSV file after scraping the data.
-Procedure:
-Create a New Process in UiPath Studio:
 
+## Procedure:
+# Create a New Process in UiPath Studio:
 Launch UiPath Studio and click on Process under the New Project tab.
 Name the project (e.g., Scrape Web Data to CSV) and click Create.
 This will set up a new workspace for the automation workflow.
-Install Browser Extension (if needed):
 
+# Install Browser Extension (if needed):
 If you haven't installed the UiPath browser extension for your preferred browser, UiPath will prompt you to do so.
 Follow the instructions to enable the extension, which allows UiPath to interact with the webpage.
-Open a Browser with UiPath:
 
+# Open a Browser with UiPath:
 In the Activities panel on the left, search for Use Browser. Drag the Use Browser activity into the main window of your workflow.
 In the Browser URL property, input the URL of the website that contains the table or structured data you want to scrape. For example:
-
+```
 "http://127.0.0.1:5500/ex05/static/table.html"
-
+```
 This will open the specified website when the workflow is executed.
-Scrape Data from the Webpage:
 
+# Scrape Data from the Webpage:
 Inside the Use Browser activity, drag the Extract Table Data activity.
 Use the Data Scraping Wizard to scrape the structured data from the webpage:
 Click Extract Table Data and a wizard will appear.
@@ -40,44 +42,44 @@ Select the first and second elements of the table or data list you want to scrap
 The wizard will automatically highlight similar elements on the page and capture them.
 Once the pattern is recognized, you can customize the data by renaming the columns or refining the selection.
 The extracted data is automatically stored in a DataTable variable (for example, ExtractDataTable).
-Save Scraped Data to CSV File:
 
+# Save Scraped Data to CSV File:
 After the Extract Table Data activity, search for Write CSV in the Activities panel and drag it into the workflow.
 Set the Write from field to ExtractDataTable, the variable holding the scraped data.
 In the Write to what file property, specify the file path where you want the CSV to be saved. For example:
-
+```
 "C:\Users\admin\Documents\UiPath sample csv.csv"
-
+```
 Ensure the Include headers checkbox is checked so that column names from the table will be added to the CSV file.
-Configure and Test:
 
+# Configure and Test:
 Verify that all paths are correct and all activities are connected.
 Save the project by pressing CTRL+S.
-Run the Automation:
 
+# Run the Automation:
 Click the Run button at the top of UiPath Studio.
-The workflow will:
+
+# The workflow will:
 Open the specified website in the browser.
 Extract the data from the table or structured list on the webpage.
 Write the extracted data into the CSV file at the specified location on your system.
-Check the CSV Output:
 
+# Check the CSV Output:
 Navigate to the location of your saved CSV file.
 Open the CSV file to verify that the scraped data has been written correctly, including the headers if applicable.
-Example Scenario:
 
-Web Page: A website displays a table of customer information (e.g., names, addresses, phone numbers, etc.).
-UiPath Workflow Actions:
-
+# Example Scenario:
+# Web Page: A website displays a table of customer information (e.g., names, addresses, phone numbers, etc.).
+# UiPath Workflow Actions:
 Open the browser and navigate to the web page.
 Scrape the table data (e.g., the names and phone numbers) using the Data Scraping Wizard.
 Save the scraped data in a CSV file named CustomerData.csv in the Documents folder.
-Output:
+## Output:
+![Screenshot 2024-09-17 114233](https://github.com/user-attachments/assets/a39362c5-2273-4dc0-a90e-8f5c28ac886a)
+![Screenshot 2024-09-17 114534](https://github.com/user-attachments/assets/c87a3421-7d0e-4260-bd4d-c4d50b32ba07)
+![Screenshot 2024-09-17 114555](https://github.com/user-attachments/assets/56446231-25bb-42e1-9195-cca139bef1fd)
+![Screenshot 2024-09-17 114630](https://github.com/user-attachments/assets/28311643-9463-4948-b905-3b19a92e4f80)
+![Screenshot 2024-09-17 115204](https://github.com/user-attachments/assets/5240fd0b-c480-44f9-a4c6-784e274255d2)
 
-The CSV file contains two columns: "Name" and "Phone Number".
-Each row represents the customer information extracted from the table on the webpage.
-UiPath WorkFlow:
-
-alt text alt text alt text alt text alt text
-Result:
+## Result:
 The workflow successfully scrapes data from the target webpage, saves the data in a structured format in a CSV file, and includes headers for the data columns. This shows that UiPath can easily automate data extraction tasks and save the data for future processing, analysis, or reporting.
